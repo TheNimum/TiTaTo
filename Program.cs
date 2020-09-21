@@ -13,8 +13,8 @@ namespace TiTaTo
            
             
             intro();
-           bool Wincondition = true;
-            while (Wincondition == true)
+           bool Wincondition = false;
+            while (Wincondition == false)
             {
            
             print(Board);
@@ -25,7 +25,42 @@ namespace TiTaTo
             
              Board[row,colums] = Player;
            
-            Player = whosturn(Player);
+            
+
+
+                
+                
+                    if(Player == Board[0,0] && Player == Board[0,1] && Player == Board[0,2])
+                        {
+                            System.Console.WriteLine($"{Player} has won the game!. ");
+                            
+                            Console.ReadKey();
+                            Wincondition = true;
+                        }
+                    
+                    
+                        if(Player == Board[0,0] && Player == Board[1,0] && Player == Board[2,0])
+                        {
+                            System.Console.WriteLine($"{Player} has won the game!. ");
+                            
+                            Console.ReadKey();
+                            Wincondition = true;
+                        }
+                    
+                    
+                   
+                    
+                        if(Player == Board[0,2] && Player == Board[1,1] && Player == Board[2,0])
+                        {
+                            System.Console.WriteLine($"{Player} has won the game!. ");
+                            
+                            Console.ReadKey();
+                            Wincondition = true;
+                        }
+                        
+                    Player = whosturn(Player);
+
+                
            
            
            
